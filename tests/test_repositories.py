@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from versions.repositories import Repository, Pool
+from versions.repositories import Repository, CompositeRepository
 from versions.packages import Package
 
 
@@ -26,7 +26,7 @@ class TestRepository(TestCase):
         ])
 
 
-class TestPool(TestCase):
+class TestCompositeRepository(TestCase):
 
     def test(self):
         foo_repo = Repository(set([
@@ -37,12 +37,12 @@ class TestPool(TestCase):
             Package.parse('vim-7.4+perl.python'),
             Package.parse('vim-7.4+perl.ruby.python'),
             Package.parse('vim-6.0+perl.ruby.python')]))
-        pool = Pool([foo_repo, vim_repo])
-        self.assertEqual(pool.get('foo'), [
+        crep = CompositeRepository([foo_repo, vim_repo])
+        self.assertEqual(crep.get('foo'), [
             Package.parse('foo-1.0'),
             Package.parse('foo-2.0'),
             Package.parse('foo-3.0'),
         ])
-        self.assertEqual(pool.get('vim[ruby]>7'), [
+        self.assertEqual(crep.get('vim[ruby]>7'), [
             Package.parse('vim-7.4+perl.ruby.python'),
         ])

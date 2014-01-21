@@ -8,6 +8,6 @@ repositories
     :members:
     :member-order: bysource
 
-.. autoclass:: Pool
+.. autoclass:: CompositeRepository
     :members:
     :member-order: bysource

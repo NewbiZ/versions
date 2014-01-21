@@ -26,10 +26,10 @@ class Repository(object):
                       if requirement.name == p.name and requirement.match(p))
 
 
-class Pool(object):
-    """A package repository pool.
+class CompositeRepository(object):
+    """A composite repository.
 
-    When querying a repository pool, it queries all repositories, and merges
+    When querying a composite repository, it queries all repositories, and merges
     their results.
 
     :param repositories: Underlying package repositories.
@@ -55,3 +55,4 @@ class Pool(object):
         for repository in self.repositories:
             packages |= set(repository.get(requirement))
         return sorted(packages)
+
