@@ -1,8 +1,11 @@
 __version__ = '0.7.0'
-from .version import Version
-from .constraint import Constraint
-from .constraints import Constraints
-from .packages import Package
-from .requirements import Requirement
-from .repositories import Repository, CompositeRepository
-from .solve import solve
+
+# We rely on cmp() which is not available in python 3
+import sys
+
+MAJOR = sys.version_info[0] 
+
+if MAJOR == 3:
+    cmp = lambda a, b: (a > b) - (a < b)  # pragma: no cover
+
+from .api import *

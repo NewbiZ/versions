@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from versions.requirements import Requirement, InvalidRequirement, \
+from versions.api.requirements import Requirement, InvalidRequirement, \
     InvalidRequirementExpression
 
 

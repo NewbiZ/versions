@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from versions.constraint import Constraint, InvalidConstraintExpression
-from versions.constraints import Constraints
-from versions.operators import eq
-from versions.version import Version
+from versions.api.constraint import Constraint, InvalidConstraintExpression
+from versions.api.constraints import Constraints
+from versions.api.operators import eq
+from versions.api.version import Version
 
 
 class TestConstraint(TestCase):

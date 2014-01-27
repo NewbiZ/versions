@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from versions.constraints import Constraints, merge, ExclusiveConstraints
-from versions.constraint import Constraint
+from versions.api.constraints import Constraints, merge, ExclusiveConstraints
+from versions.api.constraint import Constraint
 
 
 class TestConstraints(TestCase):

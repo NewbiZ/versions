@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from versions.version import Version, InvalidVersionExpression, \
+from versions.api.version import Version, InvalidVersionExpression, \
     get_prerelease_type_precedence
 
 

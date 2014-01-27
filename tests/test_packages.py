@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from versions.packages import Package, InvalidPackageExpression, \
+from versions.api.packages import Package, InvalidPackageExpression, \
     InvalidPackageInfo
-from versions.requirements import Requirement
+from versions.api.requirements import Requirement
 
 
 class TestPackage(TestCase):

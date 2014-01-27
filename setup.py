@@ -3,6 +3,12 @@
 import os
 from setuptools import setup, find_packages
 
+# Fix python issue 15881 with backed up modules destroying globals at exit
+try:
+    import multiprocessing
+except:
+    pass
+
 import versions
 
 

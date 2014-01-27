@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from versions import operators
+from versions.api import operators
 
 
 class TestOperator(TestCase):
